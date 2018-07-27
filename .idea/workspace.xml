@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd18b8ce-98d0-486e-805e-5d83bc2e000f" name="Default" comment="" />
+    <list default="true" id="fd18b8ce-98d0-486e-805e-5d83bc2e000f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/transform/strings_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,11 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="strings.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="strings.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transform/strings.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="22" column="60" lean-forward="true" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+            <state relative-caret-position="600">
+              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings_test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/transform/strings_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -30,10 +42,14 @@
     </option>
   </component>
   <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/transform/strings.go" />
+        <option value="$PROJECT_DIR$/transform/strings_test.go" />
       </list>
     </option>
   </component>
@@ -63,6 +79,7 @@
     <option name="width" value="1364" />
     <option name="height" value="735" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -185,12 +202,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532649583334</updated>
-      <workItem from="1532649585751" duration="2124000" />
+      <workItem from="1532649585751" duration="2856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2124000" />
+    <option name="totallyTimeSpent" value="2856000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -205,7 +222,7 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
@@ -234,8 +251,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/transform/strings.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="60" lean-forward="true" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+        <state relative-caret-position="600">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transform/strings_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="35" />
         </state>
       </provider>
     </entry>
