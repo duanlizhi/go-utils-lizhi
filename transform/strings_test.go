@@ -6,8 +6,23 @@
  */
 package transform
 
-import "testing"
+import (
+	"fmt"
+	"reflect"
+	"testing"
+)
 
 func TestBaseType2String(t *testing.T) {
-
+	var i = 8
+	fmt.Print(reflect.TypeOf(i))
+	string := BaseType2String(i)
+	fmt.Println(string, reflect.TypeOf(string))
+	var b = 33.55
+	fmt.Println(reflect.TypeOf(b))
+	sf := BaseType2String(b)
+	fmt.Println(sf, reflect.TypeOf(sf))
+}
+func TestString2Int(t *testing.T) {
+	var a = "2.35"
+	fmt.Println(String2Int(a))
 }
