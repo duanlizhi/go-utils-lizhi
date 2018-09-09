@@ -24,12 +24,12 @@ func JPush(appKey string, masterSecret string, pushObj PushObject) string {
 	}
 	response, err := client.PostJson(J_PUSH_API, pushObj)
 	if err != nil {
-		log.Fatalf("Jpush err,appKey:%s /n,masterSecret:%s /n,pushObj:%v,/n err:%v", appKey, masterSecret, pushObj, err)
+		log.Fatalf("Jpush err,appKey:%s\n,masterSecret:%s\n,pushObj:%v,\n err:%v", appKey, masterSecret, pushObj, err)
 		return err.Error()
 	}
 	s, e := response.ToString()
 	if e != nil {
-		log.Printf("response body to string err: %v /n", e)
+		log.Printf("response body to string err: %v\n", e)
 	}
 	return s
 }
