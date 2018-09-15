@@ -21,7 +21,9 @@ func TestNewPushObject(t *testing.T) {
 	object := NewPushObject(false)
 	notification := NewNotification("测试极光推送，哈哈哈，希望一切顺利o啦")
 	object.Notification = notification
-
+	var audience Audience
+	audience.AddAlias("51_1")
+	object.Audience = audience
 	push := object.JPush(appKey, masterScrect)
 	fmt.Println(push)
 }

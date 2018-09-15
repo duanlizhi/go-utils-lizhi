@@ -21,7 +21,7 @@ type PushObject struct {
 	Notification *Notification `json:"notification,omitempty"` //(可选)通知内容体。是被推送到客户端的内容。与 message 一起二者必须有其一，可以二者并存
 	Message      *Message      `json:"message,omitempty"`      //(可选)消息内容体。是被推送到客户端的内容。与 notification 一起二者必须有其一，可以二者并存
 	SmsMessage   *SmsMessage   `json:"sms_message,omitempty"`  //(可选)短信渠道补充送达内容体
-	Options      *Options      `json:"option,omitempty"`       //(可选)推送参数
+	Options      *Options      `json:"options,omitempty"`      //(可选)推送参数
 	Cid          string        `json:"cid,omitempty"`          //可选，用于防止api调用端重试造成服务端的重复推送而定义
 }
 
@@ -37,6 +37,7 @@ func NewPushObject(prod bool) *PushObject {
 	return &PushObject{
 		Platform: "all",
 		Options: &Options{
+			TimeToLive:     5 * 24 * 60 * 60,
 			ApnsProduction: prod_default,
 		},
 	}
@@ -205,7 +206,7 @@ func (audience *Audience) AddAlias(alias ...string) {
 			}
 		}
 		if !isExist {
-			alias = append(alias, v)
+			aliasSlice = append(aliasSlice, v)
 		}
 	}
 	audience.Alias = append(audience.Alias, aliasSlice...)
@@ -350,7 +351,7 @@ type IosNotification struct {
 	//通知提示声音(可选)
 	Sound string `json:"sound,omitempty"` //如果无此字段，则此消息无声音提示；有此字段，如果找到了指定的声音就播放该声音，否则播放默认声音，
 	//应用角标(可选)
-	Badge int64 `json:"badge"` //如果不填，表示不改变角标数字，否则把角标数字改为指定的数字；为 0 表示清除。JPush 官方 SDK 会默认填充 badge 值为 "+1",
+	Badge int64 `json:"badge,omitempty"` //如果不填，表示不改变角标数字，否则把角标数字改为指定的数字；为 0 表示清除。JPush 官方 SDK 会默认填充 badge 值为 "+1",
 	//推送唤醒(可选)
 	ContentAvailable bool `json:"content-available,omitempty"` //推送的时候携带 "content-available":true 说明是 Background Remote Notification，如果不携带此字段则是普通的 Remote Notification
 	//通知扩展(可选)
@@ -413,7 +414,7 @@ type Options struct {
 	/**要覆盖的消息 ID(可选)*/
 	OverrideMsgId string `json:"override_msg_id,omitempty"` //如果当前的推送要覆盖之前的一条推送，这里填写前一条推送的 msg_id 就会产生覆盖效果，即：1）该 msg_id 离线收到的消息是覆盖后的内容；2）即使该 msg_id Android 端用户已经收到，如果通知栏还未清除，则新的消息内容会覆盖之前这条通知，该字段仅对 Android 有效。
 	/**APNs 是否生产环境（可选）*/
-	ApnsProduction bool `json:"apns_production,omitempty"` //True 表示推送生产环境，False 表示要推送开发环境；如果不指定则为推送生产环境。但注意，JPush 服务端 SDK 默认设置为推送 “开发环境”。该字段仅对 iOS 的 Notification 有效。
+	ApnsProduction bool `json:"apns_production"` //True 表示推送生产环境，False 表示要推送开发环境；如果不指定则为推送生产环境。但注意，JPush 服务端 SDK 默认设置为推送 “开发环境”。该字段仅对 iOS 的 Notification 有效。
 	/**更新 iOS 通知的标识符（可选）*/
 	ApnsCollapseId string `json:"apns_collapse_id,omitempty"` //APNs 新通知如果匹配到当前通知中心有相同 apns-collapse-id 字段的通知，则会用新通知内容来更新它，并使其置于通知中心首位。collapse id 长度不可超过 64 bytes。
 	/**定速推送时长(分钟)(可选)*/

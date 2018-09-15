@@ -28,6 +28,6 @@ const (
 func NewAuthrization(appKey string, masterSecret string) string {
 	key := appKey + ":" + masterSecret
 	encoded := base64.StdEncoding.EncodeToString([]byte(key))
-	fmt.Printf("source: %s To base64encode: %s", key, encoded)
-	return encoded
+	fmt.Printf("source: %s\n To\n base64encode: %s\n", key, "Basic "+encoded)
+	return "Basic " + encoded
 }
