@@ -12,10 +12,12 @@ import (
 )
 
 const (
-	J_PUSH_API       = "https://api.jpush.cn/v3/push"
-	J_GROUP_PUSH_API = "https://api.jpush.cn/v3/grouppush"     //该 API 用于为开发者在 portal 端创建的应用分组创建推送。groupkey 可以在创建的分组信息中获取，使用起来同 appkey 类似，但在使用的时候前面要加上 “group-” 前缀。
-	J_VALIDATE_API   = "https://api.jpush.cn/v3/push/validate" //该 API 只用于验证推送调用是否能够成功，与推送 API 的区别在于：不向用户发送任何消息。 其他字段说明：同推送 API。
-
+	J_PUSH_API        = "https://api.jpush.cn/v3/push"
+	J_GROUP_PUSH_API  = "https://api.jpush.cn/v3/grouppush"     //该 API 用于为开发者在 portal 端创建的应用分组创建推送。groupkey 可以在创建的分组信息中获取，使用起来同 appkey 类似，但在使用的时候前面要加上 “group-” 前缀。
+	J_VALIDATE_API    = "https://api.jpush.cn/v3/push/validate" //该 API 只用于验证推送调用是否能够成功，与推送 API 的区别在于：不向用户发送任何消息。 其他字段说明：同推送 API。
+	PLATFORM_IOS      = "ios"
+	PLATFORM_ANDROID  = "android"
+	PLATFORM_WINPHONE = "winphone"
 )
 
 /**

@@ -16,7 +16,7 @@ import (
  * @author lizhi_duan
  * @date 2018/9/9 21:25
  */
-func JPush(appKey string, masterSecret string, pushObj PushObject) string {
+func (pushObj *PushObject) JPush(appKey string, masterSecret string) string {
 	authrization := NewAuthrization(appKey, masterSecret)
 	client := httpClient.NewMyHttpClient()
 	client.Headers = map[string]string{
