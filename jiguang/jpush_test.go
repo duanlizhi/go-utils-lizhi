@@ -19,6 +19,9 @@ const (
 
 func TestNewPushObject(t *testing.T) {
 	object := NewPushObject(false)
+	notification := NewNotification("测试极光推送，哈哈哈，希望一切顺利o啦")
+	object.Notification = notification
+
 	push := object.JPush(appKey, masterScrect)
 	fmt.Println(push)
 }

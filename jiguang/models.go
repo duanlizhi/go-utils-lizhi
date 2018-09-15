@@ -283,10 +283,10 @@ func (audience *Audience) AddAbtest(abtest ...string) {
  * @date 2018/9/7 15:52
  */
 type Notification struct {
-	Alert    string                `json:"alert;omitempty"` //通知的内容在各个平台上，都可能只有这一个最基本的属性 "alert"。
-	Android  *AndroidNotification  `json:"android;omitempty"`
-	Ios      *IosNotification      `json:"ios;omitempty"`
-	Winphone *WinphoneNotification `json:"winphone;omitempty"`
+	Alert                string                `json:"alert;omitempty"` //通知的内容在各个平台上，都可能只有这一个最基本的属性 "alert"。
+	AndroidNotification  *AndroidNotification  `json:"android;omitempty"`
+	IosNotification      *IosNotification      `json:"ios;omitempty"`
+	WinphoneNotification *WinphoneNotification `json:"winphone;omitempty"`
 }
 
 /**
@@ -297,13 +297,13 @@ type Notification struct {
 func NewNotification(alert string) *Notification {
 	return &Notification{
 		Alert: alert,
-		Android: &AndroidNotification{
+		AndroidNotification: &AndroidNotification{
 			Alert: alert,
 		},
-		Ios: &IosNotification{
+		IosNotification: &IosNotification{
 			Alert: alert,
 		},
-		Winphone: &WinphoneNotification{
+		WinphoneNotification: &WinphoneNotification{
 			Alert: alert,
 		},
 	}
