@@ -2,16 +2,20 @@
 
 
 [[projects]]
-  digest = "1:fcabda0be3e3cef964e575eb95eec318f3e50a50585279d6a7117e9945e8ee96"
   name = "github.com/ddliu/go-httpclient"
   packages = ["."]
-  pruneopts = "UT"
   revision = "72917d81d0423a6235790470d15a4d099e3490f9"
   version = "v0.5.1"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["pbkdf2"]
+  revision = "5295e8364332db77d75fce11f1d19c053919a9c9"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  input-imports = ["github.com/ddliu/go-httpclient"]
+  inputs-digest = "e667bffa1daf6f2cc6c3d98781bcf983e1ab7a830c31adeb29b2c58143ef44fe"
   solver-name = "gps-cdcl"
   solver-version = 1
