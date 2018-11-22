@@ -1,0 +1,14 @@
+plugins {
+    id 'com.github.blindpirate.gogradle' version '0.10.2'
+}
+
+golang {
+    packagePath = 'github.com/duanlizhi/go-utils-lizhi'
+}
+dependencies {
+    golang {
+        build(['name':'github.com/ddliu/go-httpclient', 'commit':'72917d81d0423a6235790470d15a4d099e3490f9', 'tag':'v0.5.1', 'subpackages':['...']])
+        build(['name':'golang.org/x/crypto', 'commit':'5295e8364332db77d75fce11f1d19c053919a9c9', 'branch':'master', 'subpackages':['pbkdf2']])
+        build(['name':'github.com/gomodule/redigo', 'url': 'https://github.com/gomodule/redigo', 'tag': 'v2.0.0'])
+    }
+}
